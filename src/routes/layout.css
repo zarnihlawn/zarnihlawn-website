@@ -3,5 +3,8 @@
 @plugin '@tailwindcss/typography';
 
 body {
-    filter: contrast(90%);
+    filter: blur(0.5px) saturate(80%);
 }
+
+
+@import '../lib/asset/style/font.style.css';
