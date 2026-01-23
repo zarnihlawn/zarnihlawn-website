@@ -3,7 +3,7 @@ export enum WebRoutesEnum {
 	ABOUT = "/about",
 	POSTS = "/posts",
 	ACHIEVEMENT = "/achievement",
-	PORTFOLIO = "/portfolio"
+	EXPERIENCE = "/experience"
 }
 
 export enum ServerRoutesEnum {

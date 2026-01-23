@@ -25,18 +25,20 @@
 		home: false,
 		about: false,
 		achievement: false,
-		portfolio: false,
+		experience: false,
 		posts: false
 	});
 
 	$effect(() => {
-		const pageId = page.route?.id;
+		const pathname = page.url?.pathname ?? '/';
 
-		activePages.home = pageId === WebRoutesEnum.DEFUALT;
-		activePages.about = pageId === WebRoutesEnum.ABOUT;
-		activePages.achievement = pageId === WebRoutesEnum.ACHIEVEMENT;
-		activePages.portfolio = pageId === WebRoutesEnum.PORTFOLIO;
-		activePages.posts = pageId === WebRoutesEnum.POSTS;
+		const firstSegment = pathname.split('/').filter(Boolean)[0] ?? '';
+
+		activePages.home = firstSegment === '';
+		activePages.about = firstSegment === 'about';
+		activePages.achievement = firstSegment === 'achievement';
+		activePages.experience = firstSegment === 'experience';
+		activePages.posts = firstSegment === 'posts';
 	});
 </script>
 
@@ -333,13 +335,13 @@
 							{/if}
 						</a>
 						<a
-							href="/portfolio"
+							href="/experience"
 							class="group relative rounded-2xl p-2 hover:bg-gray-100"
 						>
 							<li class="flex items-center gap-3">
-								<span class="text-lg font-bold"> PORTFOLIO </span>
+								<span class="text-lg font-bold"> EXPERIENCE </span>
 							</li>
-							{#if activePages.portfolio}
+							{#if activePages.experience}
 								<span
 									class="absolute bottom-0 left-1/2 h-1 w-10/12 -translate-x-1/2 rounded-full bg-teal-400"
 								></span>
