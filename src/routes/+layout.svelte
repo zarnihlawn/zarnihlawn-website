@@ -54,6 +54,8 @@
     bg-size-[36px_36px]
     bg-position-[0_0,18px_18px]
 	p-5
+
+	my-ft-body-lg
   "
 >
 	<section

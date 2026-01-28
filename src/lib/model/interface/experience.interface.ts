@@ -5,6 +5,7 @@ export interface ExperienceInterface {
     position: string;
     link: string;
     detailLink: string;
+    type: 'job' | 'hobby' | 'school';
     joinedAt: Date;
     latestAt: Date;
 }

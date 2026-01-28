@@ -1,43 +1,23 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import { ExperienceData } from '$lib/model/data/experience.data';
 	import { WebRoutesEnum } from '$lib/model/enum/routes.enum';
-	import type { ExperienceInterface } from '$lib/model/interface/experience.interface';
 	import { RouterUtil } from '$lib/util/router.util.svelte';
 
 	const routerUtil = new RouterUtil();
 
-	const experienceCards: ExperienceInterface[] = [
-		{
-			name: 'Pun Hlaing Hospitals',
-			description: 'a hospital',
-			position: 'junior data & software engineer',
-			link: 'https://punhlainghospitals.com/',
-			detailLink:
-				'pun-hlaing-hospitals-junior-data-&-software-engineer',
-			joinedAt: new Date('2025-7-1'),
-			latestAt: new Date()
-		},
-		{
-			name: 'mari.software',
-			description: 'indie software development (side project)',
-			position: 'software engineer',
-			link: 'https://github.com/mari-software',
-			detailLink: 'mari-software-software-engineer',
-			joinedAt: new Date('2025-12-23'),
-			latestAt: new Date()
-		},
-		{
-			name: 'Pun Hlaing Hospitals',
-			description: 'a hospital',
-			position: 'intern software developer',
-			link: 'https://punhlainghospitals.com/',
-			detailLink: 'pun-hlaing-hospitals-intern-software-developer',
-			joinedAt: new Date('2024-10-01'),
-			latestAt: new Date('2025-7-1')
-		}
-	];
-
 	const currentPage = page.url;
+
+	const tabs = [
+		{ id: 'job', label: 'Job' },
+		{ id: 'hobby', label: 'Hobby' },
+		{ id: 'school', label: 'School' }
+	] as const;
+
+	type TabId = (typeof tabs)[number]['id'];
+
+	let selectedTab: TabId = $state('job');
+	let filteredExperience = $derived(ExperienceData.filter((e) => e.type === selectedTab));
 
 	function isCurrent(date: Date) {
 		const now = new Date();
@@ -62,13 +42,32 @@
 	id="card"
 	class="h-203.75 overflow-y-auto rounded-lg bg-gray-100 px-5 py-3"
 >
-	<h2 class="mb-5 text-xl font-extrabold tracking-widest">
+	<h2 class="mb-3 text-xl font-extrabold tracking-widest">
 		: : {currentPage.pathname.slice(1).replace('/', ' : : ')}
 	</h2>
 
+	<!-- tabs -->
+	<div class="mb-5 rounded-xl bg-gray-200 p-1">
+		<div class="flex space-x-2">
+			{#each tabs as tab}
+				<button
+					type="button"
+					class={`flex-1 rounded-lg px-3 py-1 text-sm font-semibold transition ${
+						selectedTab === tab.id
+							? 'bg-teal-500 text-white shadow'
+							: 'bg-transparent text-gray-700 hover:bg-gray-300'
+					}`}
+					onclick={() => (selectedTab = tab.id)}
+				>
+					{tab.label}
+				</button>
+			{/each}
+		</div>
+	</div>
+
 	<!-- current -->
 	<section id="exp-card-wrapper" class="flex flex-col space-y-3">
-		{#each experienceCards as e}
+		{#each filteredExperience as e}
 			<section
 				id="exp-card"
 				class="flex flex-col space-y-5 rounded-xl bg-gray-50 px-3 py-4"
