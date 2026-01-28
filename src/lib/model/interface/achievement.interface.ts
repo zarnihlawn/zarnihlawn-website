@@ -9,6 +9,8 @@ export interface AchievementInterface {
 	description: string;
 	issuer: string;
 	type: 'career' | 'language' | 'other';
+	month: string;
+	year: number;
 	images?: AchievementImageInterface[];
 }
 

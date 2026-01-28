@@ -3,11 +3,11 @@
 	import { ExperienceData } from '$lib/model/data/experience.data';
 	import { WebRoutesEnum } from '$lib/model/enum/routes.enum';
 	import { RouterUtil } from '$lib/util/router.util.svelte';
+	import { formatBreadcrumb } from '$lib/tool/breadcrumb.tool';
 
 	const routerUtil = new RouterUtil();
 
 	const currentPage = page.url;
-
 	const tabs = [
 		{ id: 'job', label: 'Job' },
 		{ id: 'hobby', label: 'Hobby' },
@@ -43,7 +43,7 @@
 	class="h-203.75 overflow-y-auto rounded-lg bg-gray-100 px-5 py-3"
 >
 	<h2 class="mb-3 text-xl font-extrabold tracking-widest">
-		: : {currentPage.pathname.slice(1).replace('/', ' : : ')}
+		: : {formatBreadcrumb(currentPage.pathname)}
 	</h2>
 
 	<!-- tabs -->

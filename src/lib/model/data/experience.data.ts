@@ -54,27 +54,28 @@ export const ExperienceData: ExperienceInterface[] = [
         link: 'https://www.sunderland.ac.uk/',
         detailLink: 'university-of-sunderland-bsc-in-computer-science',
         type: 'school',
-        joinedAt: new Date('2022-09-01'),
-        latestAt: new Date('2025-06-01')
+        joinedAt: new Date('2024-08-01'),
+        latestAt: new Date('2025-05-01')
     },
     {
-        name: 'TMC',
+        name: 'TMC Academy',
         description: 'student',
-        position: 'Higher Diploma in Computer Science',
-        link: 'https://www.ytu.edu.tw/',
-        detailLink: 'yuan-tze-university-higher-diploma-in-computer-science',
+        position: 'Higher Diploma in Information Technology',
+        link: 'https://www.tmc.edu.sg/',
+        detailLink: 'tmc-academy-higher-diploma-in-information-technology',
         type: 'school',
-        joinedAt: new Date('2024-09-01'),
-        latestAt: new Date('2025-06-01')
+        joinedAt: new Date('2023-08-01'),
+        latestAt: new Date('2024-08-01')
     },
     {
-        name: 'TMC',
+        name: 'Pearson',
         description: 'student',
-        position: 'Foundation',
-        link: 'https://www.ytu.edu.tw/',
-        detailLink: 'yuan-tze-university-higher-diploma-in-computer-science',
+        position: 'BTEC International Level-3 Foundation Diploma in Information Technology',
+        link: 'https://www.pearson.com/',
+        detailLink:
+            'pearson-btec-international-level-3-foundation-diploma-in-information-technology',
         type: 'school',
-        joinedAt: new Date('2024-09-01'),
-        latestAt: new Date('2025-06-01')
-    },
+        joinedAt: new Date('2022-08-01'),
+        latestAt: new Date('2023-08-01')
+    }
 ]

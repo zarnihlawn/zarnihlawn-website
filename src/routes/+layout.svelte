@@ -11,10 +11,9 @@
 		LucideGithub,
 		LucideHouse,
 		LucideLanguages,
-		LucideMail,
+		LucideNotebookText,
 		LucidePalette
 	} from '@lucide/svelte';
-	import { WebRoutesEnum } from '$lib/model/enum/routes.enum';
 
 	let { children } = $props();
 
@@ -25,8 +24,7 @@
 		home: false,
 		about: false,
 		achievement: false,
-		experience: false,
-		posts: false
+		experience: false
 	});
 
 	$effect(() => {
@@ -38,7 +36,6 @@
 		activePages.about = firstSegment === 'about';
 		activePages.achievement = firstSegment === 'achievement';
 		activePages.experience = firstSegment === 'experience';
-		activePages.posts = firstSegment === 'posts';
 	});
 </script>
 
@@ -55,7 +52,6 @@
     bg-position-[0_0,18px_18px]
 	p-5
 
-	my-ft-body-lg
   "
 >
 	<section
@@ -82,28 +78,17 @@
 						</li>
 					</a>
 					<a
-						href="mailto:zarnihlawn@outlook.com?subject=Hello&body=Hi%20there"
+						href="/resume.pdf"
 						target="_blank"
 						class="rounded-2xl p-2 hover:bg-gray-100"
 					>
 						<li class="flex items-center gap-3 align-middle">
-							<LucideMail class="size-7 text-teal-300" />
-							<span class="text-lg font-bold"> Mail </span>
+							<LucideNotebookText class="size-7 text-teal-300" />
+							<span class="text-lg font-bold"> Resume </span>
 						</li>
 					</a>
 				</section>
-				<div id="header-right" class="flex list-none gap-5">
-					<a href="/" class="rounded-2xl p-2 hover:bg-gray-100">
-						<li class="flex items-center gap-3 align-middle">
-							<LucideLanguages class="size-7 text-teal-300" />
-						</li>
-					</a>
-					<a href="/" class="rounded-2xl p-2 hover:bg-gray-100">
-						<li class="flex items-center gap-3 align-middle">
-							<LucidePalette class="size-7 text-teal-300" />
-						</li>
-					</a>
-				</div>
+				
 			</ul>
 		</section>
 
@@ -310,19 +295,6 @@
 							{/if}
 						</a>
 
-						<a
-							href="/posts"
-							class="group relative rounded-2xl p-2 hover:bg-gray-100"
-						>
-							<li class="flex items-center gap-3">
-								<span class="text-lg font-bold"> POSTS </span>
-							</li>
-							{#if activePages.posts}
-								<span
-									class="absolute bottom-0 left-1/2 h-1 w-10/12 -translate-x-1/2 rounded-full bg-teal-400"
-								></span>
-							{/if}
-						</a>
 						<a
 							href="/achievement"
 							class="group relative rounded-2xl p-2 hover:bg-gray-100"

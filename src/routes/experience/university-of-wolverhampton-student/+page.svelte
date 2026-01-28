@@ -13,4 +13,6 @@
 	<h2 class="mb-5 text-xl font-extrabold tracking-widest">
 		: : {formatBreadcrumb(currentPage.pathname)}
 	</h2>
+
 </section>
+

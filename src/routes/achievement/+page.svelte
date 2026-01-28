@@ -62,7 +62,7 @@
 							{a.name}
 						</h1>
 						<p class="text-sm text-gray-600">
-							{a.issuer}
+							{a.issuer} ・ {a.month} {a.year}
 						</p>
 					</div>
 					<p class="text-sm italic opacity-70">
@@ -72,7 +72,7 @@
 						<div class="mt-1 flex flex-wrap gap-2">
 							{#each a.images as img}
 								<a
-									class="inline-flex cursor-pointer items-center justify-center rounded-lg border-2 bg-teal-200 px-3 py-1 text-xs font-semibold"
+									class="cursor-pointer rounded-lg border-2 bg-teal-200 px-3 py-1"
 									href={img.src}
 									target="_blank"
 									rel="noreferrer"

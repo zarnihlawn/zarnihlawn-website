@@ -17,6 +17,8 @@ export const AchievementData: AchievementInterface[] = [
 		description: 'Bachelor of Science Second Class Honours First Division in Computer Science.',
 		issuer: 'University of Sunderland',
 		type: 'career',
+		month: 'July',
+		year: 2025,
 		images: [
 			{
 				src: BachelorHonours,
@@ -30,6 +32,8 @@ export const AchievementData: AchievementInterface[] = [
 		description: 'Higher Diploma in Information Technology.',
 		issuer: 'TMC Academy',
 		type: 'career',
+		month: 'August',
+		year: 2024,
 		images: [
 			{
 				src: HigherDiploma,
@@ -43,6 +47,8 @@ export const AchievementData: AchievementInterface[] = [
 		description: 'Foundation diploma in information technology from GUSTO University.',
 		issuer: 'GUSTO University',
 		type: 'career',
+		month: 'October',
+		year: 2023,
 		images: [
 			{
 				src: BtecFoundation,
@@ -57,6 +63,8 @@ export const AchievementData: AchievementInterface[] = [
 			'Completion of General English and English for Academic Purposes Level 4.',
 		issuer: 'TEG International College',
 		type: 'language',
+		month: 'June',
+		year: 2024,
 		images: [
 			{
 				src: TegLevel4Page1,
@@ -75,6 +83,8 @@ export const AchievementData: AchievementInterface[] = [
 		description: 'Basic first aid training.',
 		issuer: 'Myanmar Red Cross Society',
 		type: 'other',
+		month: 'January',
+		year: 2020,
 		images: [
 			{
 				src: FirstAidBasic,
@@ -88,6 +98,8 @@ export const AchievementData: AchievementInterface[] = [
 		description: 'Participation in GUSTO’s Football Championship 2023.',
 		issuer: 'GUSTO University',
 		type: 'other',
+		month: 'February',
+		year: 2023,
 		images: [
 			{
 				src: GustoFootball,
@@ -101,6 +113,8 @@ export const AchievementData: AchievementInterface[] = [
 		description: 'Participation in the university debating competition 2023.',
 		issuer: 'GUSTO University',
 		type: 'other',
+		month: '2023',
+		year: 2023,
 		images: [
 			{
 				src: GustoDebate,
