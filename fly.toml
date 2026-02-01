@@ -1,5 +1,5 @@
 app = "zarnihlawn-website"
-primary_region = "ams"
+primary_region = "sin"
 
 [http_service]
 auto_start_machines = true
